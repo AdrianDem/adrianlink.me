@@ -1,0 +1,33 @@
+body {
+    background: url('https://ichip.ru/images/cache/2024/3/26/resize_1500_833_true_q90_878532_b5e68bc4f4546c183626796e8.webp');
+        background-size: 200% auto;
+        background-position: center;
+        background-attachment:fixed;
+
+}
+h1 {
+    text-align:center;
+    margin-top: 30px;
+    font-size: 28px;
+}
+img {
+    border-radius: 10px;
+    box-shadow: 10px 10px 200px yellow;
+}
+.photo-logo {
+    padding-left: 30px;
+    padding-right: 50px;
+}
+.content {
+    display:flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    font-size: 22px;
+    font-family: 'Caveat', cursive;
+}
+.content-item {
+    display:flex;
+    gap: 10px;
+    padding-right: 20px;
+    width: 50%;
