@@ -1,12 +1,12 @@
 body { background-color: rgb(161 130 173); }
 h1 {
     text-align:center;
-    margin-top: 80px;
-    font-size: 78px;
+    margin-top: 50px;
+    font-size: 58px;
 }
 img {
-    border-radius: 10px;
-    box-shadow: 10px 10px 200px yellow;
+    border-radius: 50px;
+    box-shadow: 50px 50px 200px yellow;
 }
 .photo-logo {
     padding-left: 30px;
@@ -40,9 +40,9 @@ img {
 
 button:active {
   color: #666;
-  box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+  box-shadow: inset 20px 40px 50px #c5c5c5, inset -20px -40px 50px #ffffff;
 }
    .scale {
-    font-size: clamp(1rem, calc(12px + 1vw), 24px);
+    font-size: clamp(1rem, calc(24px + 4vw), 48px);
    }
 
