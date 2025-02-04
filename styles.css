@@ -1,4 +1,32 @@
 body { background-color: rgb(161 130 173); }
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
 h1 {
     text-align:center;
     margin-top: 50px;
@@ -52,3 +80,5 @@ p {
     margin-inline-start: 1px;
     margin-inline-end: 1px;
 }
+
+
