@@ -118,6 +118,9 @@ p {
   overflow: hidden;
   outline: 2px solid white;
 }
+element.style {
+    width: 20%;
+}
 
 @keyframes blob-bounce {
   0% {
