@@ -59,7 +59,6 @@ p {
   .container {
     max-width: 540px;
   }
-}
 
 @media (min-width: 768px) {
   .container {
@@ -76,5 +75,26 @@ p {
 @media (min-width: 1200px) {
   .container {
     max-width: 1140px;
+  }
+}
+
+/* Стили для десктопа (ширина экрана >= 1200px) */
+@media (min-width: 1200px) {
+  .button {
+    font-size: 18px; /* Текущий размер кнопки на десктопе */
+  }
+}
+
+/* Стили для планшетов (ширина экрана >= 768px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .button {
+    font-size: 22px; /* Увеличенный размер кнопки на планшетах */
+  }
+}
+
+/* Стили для смартфонов (ширина экрана <= 767px) */
+@media (max-width: 767px) {
+  .button {
+    font-size: 26px; /* Еще больше увеличиваем размер кнопки на смартфонах */
   }
 }
