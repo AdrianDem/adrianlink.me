@@ -1,52 +1,62 @@
 body { background-color: rgb(161 130 173); }
 
 h1 {
-    text-align:center;
+    text-align: center;
     margin-top: 50px;
     font-size: 58px;
 }
-img { 
-  width:100%
+
+img {
+    width: 100%;
 }
+
 .photo-logo {
     padding-left: 30px;
     padding-right: 50px;
 }
+
 .content {
-    display:flex;
+    display: flex;
+    justify-content: center; /* Центруем контент горизонтально */
+    align-items: center; /* Центруем контент вертикально */
     width: 90%; /* Контейнер занимает 90% ширины окна браузера */
     max-width: 1200px; /* Максимальная ширина контейнера */
     margin: 0 auto; /* Центрирование контейнера */
     font-size: 52px;
     font-family: 'Caveat', cursive;
 }
+
 .content-item {
-    display:flex;
+    display: flex;
     width: 50%;
-
-    button {
-  color: #090909;
-  padding: 0.7em 1.7em;
-  font-size: 50px;
-  border-radius: 0.5em;
-  background: #e8e8e8;
-  cursor: pointer;
-  border: 1px solid #e8e8e8;
-  transition: all 0.3s;
-  box-shadow: 200px 200px 72px #c5c5c5, -200px -200px 72px #ffffff;
 }
 
-button:active {
-  color: #666;
-  box-shadow: inset 200px 200px 72px #c5c5c5, inset -200px -200px 72px #ffffff;
+.button {
+    color: #090909;
+    padding: 0.7em 1.7em;
+    font-size: 18px; /* Оптимизация размера текста */
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    cursor: pointer;
+    border: 1px solid #e8e8e8;
+    transition: all 0.3s;
+    box-shadow: 10px 10px 24px #c5c5c5, -10px -10px 24px #ffffff; /* Оптимизация теней */
 }
-   .scale {
+
+.button:hover,
+.button:focus {
+    color: #666;
+    box-shadow: inset 20px 40px 50px #c5c5c5, inset -20px -40px 50px #ffffff;
+}
+
+.scale {
     font-size: clamp(1rem, calc(24px + 4vw), 48px);
-   }
+}
+
 p {
     display: block;
-    margin-block-start: 50em;
-    margin-block-end: 50em;
+    margin-block-start: 25px; /* Уменьшение отступов */
+    margin-block-end: 25px;
     margin-inline-start: 3px;
     margin-inline-end: 3px;
 }
@@ -69,11 +79,6 @@ p {
   }
 }
 
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
-  }
-}
 @media (min-width: 1200px) {
   .container {
     max-width: 1140px;
