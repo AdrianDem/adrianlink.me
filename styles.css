@@ -57,28 +57,28 @@ img {
     button {
   color: #090909;
   padding: 0.7em 1.7em;
-  font-size: 20px;
+  font-size: 50px;
   border-radius: 0.5em;
   background: #e8e8e8;
   cursor: pointer;
   border: 1px solid #e8e8e8;
   transition: all 0.3s;
-  box-shadow: 50px 50px 24px #c5c5c5, -50px -50px 24px #ffffff;
+  box-shadow: 200px 200px 72px #c5c5c5, -200px -200px 72px #ffffff;
 }
 
 button:active {
   color: #666;
-  box-shadow: inset 20px 40px 50px #c5c5c5, inset -20px -40px 50px #ffffff;
+  box-shadow: inset 200px 200px 72px #c5c5c5, inset -200px -200px 72px #ffffff;
 }
    .scale {
     font-size: clamp(1rem, calc(24px + 4vw), 48px);
    }
 p {
     display: block;
-    margin-block-start: 10em;
-    margin-block-end: 10em;
-    margin-inline-start: 1px;
-    margin-inline-end: 1px;
+    margin-block-start: 50em;
+    margin-block-end: 50em;
+    margin-inline-start: 3px;
+    margin-inline-end: 3px;
 }
 
 
