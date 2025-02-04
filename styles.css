@@ -31,6 +31,16 @@ img {
     width: 50%;
 }
 
+.buttons-container {
+    display: flex;
+    justify-content: center; /* Выравниваем кнопки по центру */
+    margin-top: 50px; /* Отступ сверху для отделения от заголовка */
+}
+
+.scale {
+    margin-right: 20px; /* Пространство между кнопками */
+}
+
 .button {
     color: #090909;
     padding: 0.7em 1.7em;
