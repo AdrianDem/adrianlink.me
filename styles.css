@@ -24,6 +24,8 @@ img {
     margin: 0 auto; /* Центрирование контейнера */
     font-size: 52px;
     font-family: 'Caveat', cursive;
+    justify-content: center; /* Выравнивает элементы по центру по горизонтали */
+    align-items: center; /* Выровнят элементы по вертикали, если нужно */
 }
 
 .content-item {
