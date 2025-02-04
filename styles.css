@@ -19,7 +19,8 @@ img {
 
 .buttons-container {
     display: flex;
-    justify-content: center; /* Выравниваем кнопки по центру */
+    flex-direction: column; /* Изменено на column для вертикального расположения */
+    align-items: center; /* Выравниваем кнопки по центру */
     margin-top: 50px; /* Отступ сверху для отделения от заголовка */
     gap: 20px; /* Пространство между кнопками */
 }
