@@ -34,7 +34,7 @@ img {
     cursor: pointer;
     border: 1px solid #e8e8e8;
     transition: all 0.3s;
-    box-shadow: 10px 10px 24px #c5c5c5, -10px -10px 24px #ffffff; /* Оптимизация теней */
+    box-shadow: 10px 10px 24px #c5c5c5; /* Оптимизация теней */
 }
 
 .button:hover,
