@@ -1,30 +1,40 @@
-.header-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+body {
+  background-color: rgb(161 130 173);
 }
 
-.image-container {
-  margin-bottom: 15px;
-  display: inline-flex;
-  align-self: stretch;
-}
-
-.caption-container {
-  flex-grow: 1;
+h1 {
   text-align: center;
+  margin-top: 50px;
+  font-size: 58px;
+}
+
+img {
+  width: 100%;
+}
+
+.photo-logo {
+  padding-left: 30px;
+  padding-right: 50px;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column; /* Изменено на column для вертикального расположения */
+  align-items: center; /* Выравниваем кнопки по центру */
+  margin-top: 50px; /* Отступ сверху для отделения от заголовка */
+  gap: 20px; /* Пространство между кнопками */
 }
 
 .button {
   color: #090909;
   padding: 0.7em 1.7em;
-  font-size: 18px;
+  font-size: 18px; /* Оптимизация размера текста */
   border-radius: 0.5em;
   background: #e8e8e8;
   cursor: pointer;
   border: 1px solid #e8e8e8;
   transition: all 0.3s;
-  box-shadow: 5px 2px 20px #35193a, -1px -1px 24px #c558e8;
+  box-shadow: 5px 2px 20px #35193a, -1px -1px 24px #c558e8; /* Оптимизация теней */
 }
 
 .button:hover,
@@ -39,7 +49,7 @@
 
 p {
   display: block;
-  margin-block-start: 25px;
+  margin-block-start: 25px; /* Уменьшение отступов */
   margin-block-end: 25px;
   margin-inline-start: 3px;
   margin-inline-end: 3px;
@@ -68,112 +78,65 @@ p {
 
 @media (min-width: 1200px) {
   .button {
-    font-size: 18px;
+    font-size: 18px; /* Текущий размер кнопки на десктопе */
   }
 
 @media (min-width: 768px) and (max-width: 1199px) {
   .button {
-    font-size: 22px;
+    font-size: 22px; /* Увеличенный размер кнопки на планшетах */
   }
 
 @media (max-width: 767px) {
   .button {
-    font-size: 26px;
+    font-size: 26px; /* Еще больше увеличиваем размер кнопки на смартфонах */
   }
 }
 
-/* Медиа-запросы для адаптивного поведения */
-
-@media (min-width: 1200px) {
-  .button {
-    font-size: 18px;
-  }
-
-@media (min-width: 768px) and (max-width: 1199px) {
-  .button {
-    font-size: 22px;
-  }
-
-@media (max-width: 767px) {
-  .button {
-    font-size: 26px;
-  }
-}
-
-### Финальный CSS
-
-```css
-.header-container {
+.card {
+  position: relative;
+  width: 200px;
+  height: 250px;
+  border-radius: 14px;
+  z-index: 1111;
+  overflow: hidden;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
-.image-container {
-  margin-bottom: 15px;
-  display: inline-flex;
-  align-self: stretch;
+.bg {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 190px;
+  height: 240px;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(24px);
+  border-radius: 10px;
+  overflow: hidden;
+  outline: 2px solid white;
 }
 
-.caption-container {
-  flex-grow: 1;
-  text-align: center;
-}
-
-.button {
-  color: #090909;
-  padding: 0.7em 1.7em;
-  font-size: 18px;
-  border-radius: 0.5em;
-  background: #e8e8e8;
-  cursor: pointer;
-  border: 1px solid #e8e8e8;
-  transition: all 0.3s;
-  box-shadow: 5px 2px 20px #35193a, -1px -1px 24px #c558e8;
-}
-
-.button:hover,
-.button:focus {
-  color: #666;
-  box-shadow: inset 20px 40px 50px #c5c5c5, inset -20px -40px 50px #ffffff;
-}
-
-.scale {
-  font-size: clamp(1rem, calc(24px + 4vw), 48px);
-}
-
-p {
-  display: block;
-  margin-block-start: 25px;
-  margin-block-end: 25px;
-  margin-inline-start: 3px;
-  margin-inline-end: 3px;
-}
-
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
+@keyframes blob-bounce {
+  0% {
+    transform: translate(-100%, -100%) translate3d(0, 0, 0);
   }
 
-@media (min-width: 768px) {
-  .container {
-    max-width: 720px;
+  25% {
+    transform: translate(-100%, -100%) translate3d(100%, 0, 0);
   }
 
-@media (min-width: 992px) {
-  .container {
-    max-width: 960px;
+  50% {
+    transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
   }
 
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
+  75% {
+    transform: translate(-100%, -100%) translate3d(0, 100%, 0);
   }
 
-@media (min-width: 1200px) {
-  .button {
-    font-size: 18px;
+  100% {
+    transform: translate(-100%, -100%) translate3d(0, 0, 0);
   }
-
-@media (min-width: 768px) and (max-width: 1199px) {
- 
+}
