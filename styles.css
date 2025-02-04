@@ -32,9 +32,8 @@ h1 {
     margin-top: 50px;
     font-size: 58px;
 }
-img {
-    border-radius: 50px;
-    box-shadow: 50px 50px 200px yellow;
+img { 
+  width:100%
 }
 .photo-logo {
     padding-left: 30px;
@@ -42,16 +41,14 @@ img {
 }
 .content {
     display:flex;
-    gap: 50px;
-    flex-wrap: wrap;
-    padding-top: 50px;
+    width: 90%; /* Контейнер занимает 90% ширины окна браузера */
+    max-width: 1200px; /* Максимальная ширина контейнера */
+    margin: 0 auto; /* Центрирование контейнера */
     font-size: 52px;
     font-family: 'Caveat', cursive;
 }
 .content-item {
     display:flex;
-    gap: 50px;
-    padding-right: 50px;
     width: 50%;
 
     button {
