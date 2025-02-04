@@ -19,23 +19,9 @@ img {
 
 .buttons-container {
     display: flex;
-    justify-content: center; /* Центруем контент горизонтально */
-    align-items: center; /* Центруем контент вертикально */
-    width: 90%; /* Контейнер занимает 90% ширины окна браузера */
-    max-width: 1200px; /* Максимальная ширина контейнера */
-    margin: 0 auto; /* Центрирование контейнера */
-    font-size: 52px;
-    font-family: 'Caveat', cursive;
+    justify-content: center; /* Выравниваем кнопки по центру */
     margin-top: 50px; /* Отступ сверху для отделения от заголовка */
-}
-
-.content-item {
-    display: flex;
-    width: 50%;
-}
-
-.scale {
-    margin-right: 20px; /* Пространство между кнопками */
+    gap: 20px; /* Пространство между кнопками */
 }
 
 .button {
