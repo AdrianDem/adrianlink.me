@@ -4,8 +4,9 @@ body {
 
 .card {
   position: relative;
-  width: 300px; /* увеличил ширину контейнера */
-  height: auto; /* сделал высоту адаптивной */
+  width: 80%;
+  max-width: 500px; /* Ограничиваем максимальную ширину для больших экранов */
+  height: auto;
   border-radius: 14px;
   z-index: 1111;
   overflow: hidden;
@@ -13,12 +14,13 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 0 auto; /* Центрирование по горизонтали */
 }
 
 h1 {
   text-align: center;
-  margin-top: 20px; /* уменьшил отступ сверху */
-  font-size: 36px; /* сократил размер шрифта */
+  margin-top: 20px;
+  font-size: 36px;
   color: #330e47;
 }
 
@@ -26,29 +28,24 @@ img {
   width: 20%;
 }
 
-.photo-logo {
-  padding-left: 30px;
-  padding-right: 50px;
-}
-
 .buttons-container {
   display: flex;
-  flex-direction: column; /* Изменено на column для вертикального расположения */
-  align-items: center; /* Выравниваем кнопки по центру */
-  margin-top: 50px; /* Отступ сверху для отделения от заголовка */
-  gap: 20px; /* Пространство между кнопками */
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  gap: 20px;
 }
 
 .button {
   color: #090909;
   padding: 0.7em 1.7em;
-  font-size: 18px; /* Оптимизация размера текста */
+  font-size: 18px;
   border-radius: 0.5em;
   background: #e8e8e8;
   cursor: pointer;
   border: 1px solid #e8e8e8;
   transition: all 0.3s;
-  box-shadow: 5px 2px 20px #35193a, -1px -1px 24px #c558e8; /* Оптимизация теней */
+  box-shadow: 5px 2px 20px #35193a, -1px -1px 24px #c558e8;
 }
 
 .button:hover,
@@ -58,56 +55,44 @@ img {
 }
 
 .scale {
-  font-size: clamp(1rem, calc(24px + 4vw), 48px);
+  font-size: clamp(1rem, calc(1.5rem + 4vw), 3rem); /* Ограничиваем максимальный размер текста */
 }
 
 p {
   display: block;
-  margin-block-start: 25px; /* Уменьшение отступов */
-  margin-block-end: 25px;
+  margin-block-start: 15px;
+  margin-block-end: 15px;
   margin-inline-start: 3px;
   margin-inline-end: 3px;
 }
 
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
+@media (min-width: 600px) {
+  .card {
+    width: 70%;
+  }
+  
+  .button {
+    font-size: 22px;
   }
 }
 
-@media (min-width: 768px) {
-  .container {
-    max-width: 720px;
+@media (min-width: 900px) {
+  .card {
+    width: 60%;
   }
-}
-
-@media (min-width: 992px) {
-  .container {
-    max-width: 960px;
+  
+  .button {
+    font-size: 26px;
   }
 }
 
 @media (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
+  .card {
+    width: 50%;
   }
-}
-
-@media (min-width: 1200px) {
+  
   .button {
-    font-size: 18px; /* Текущий размер кнопки на десктопе */
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1199px) {
-  .button {
-    font-size: 32px; /* Увеличенный размер кнопки на планшетах */
-  }
-}
-
-@media (max-width: 767px) {
-  .button {
-    font-size: 46px; /* Еще больше увеличиваем размер кнопки на смартфонах */
+    font-size: 28px;
   }
 }
 
@@ -123,26 +108,4 @@ p {
   border-radius: 10px;
   overflow: hidden;
   outline: 2px solid white;
-}
-
-@keyframes blob-bounce {
-  0% {
-    transform: translate(-100%, -100%) translate3d(0, 0, 0);
-  }
-
-  25% {
-    transform: translate(-100%, -100%) translate3d(100%, 0, 0);
-  }
-
-  50% {
-    transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
-  }
-
-  75% {
-    transform: translate(-100%, -100%) translate3d(0, 100%, 0);
-  }
-
-  100% {
-    transform: translate(-100%, -100%) translate3d(0, 0, 0);
-  }
 }
