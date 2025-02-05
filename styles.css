@@ -2,10 +2,23 @@ body {
   background-color: rgb(161 130 173);
 }
 
+.card {
+  position: relative;
+  width: 300px; /* увеличил ширину контейнера */
+  height: auto; /* сделал высоту адаптивной */
+  border-radius: 14px;
+  z-index: 1111;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 h1 {
   text-align: center;
-  margin-top: 50px;
-  font-size: 58px;
+  margin-top: 20px; /* уменьшил отступ сверху */
+  font-size: 36px; /* сократил размер шрифта */
   color: #330e47;
 }
 
