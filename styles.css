@@ -60,16 +60,19 @@ p {
   .container {
     max-width: 540px;
   }
+}
 
 @media (min-width: 768px) {
   .container {
     max-width: 720px;
   }
+}
 
 @media (min-width: 992px) {
   .container {
     max-width: 960px;
   }
+}
 
 @media (min-width: 1200px) {
   .container {
@@ -81,11 +84,13 @@ p {
   .button {
     font-size: 18px; /* Текущий размер кнопки на десктопе */
   }
+}
 
 @media (min-width: 768px) and (max-width: 1199px) {
   .button {
     font-size: 32px; /* Увеличенный размер кнопки на планшетах */
   }
+}
 
 @media (max-width: 767px) {
   .button {
@@ -119,9 +124,6 @@ p {
   overflow: hidden;
   outline: 2px solid white;
 }
-element.style {
-    width: 20%;
-}
 
 @keyframes blob-bounce {
   0% {
@@ -144,4 +146,3 @@ element.style {
     transform: translate(-100%, -100%) translate3d(0, 0, 0);
   }
 }
-
