@@ -58,7 +58,7 @@ img {
 }
 
 .scale {
-  font-size: clamp(1rem, calc(50px + 4vw), 96px);
+  font-size: clamp(1rem, calc(24px + 4vw), 48px);
 }
 
 p {
