@@ -251,10 +251,11 @@ a:hover {
     border: 1px solid var(--purple-a6);
 }
 
-.page-buttons-container {
+.page-space-between-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
+    justify-content: space-between;
     gap: 24px;
 }
 
@@ -312,6 +313,10 @@ a:hover {
         line-height: 18px;
     }
 
+    .page-space-between-container {
+        flex-direction: column;
+    }
+
     .page-buttons {
         width: 20%;
         text-align: left;
@@ -324,4 +329,15 @@ gallery-grid
     display: grid;
     grid-template-columns: repeat(7,1fr);
     grid-row-gap: 12px
+}
+
+h1 {
+    color: var(--gray-12);
+    width: 200%;
+    text-align: center;
+}
+h3 {
+    color: var(--gray-12);
+    width: 200%;
+    text-align: center;
 }
