@@ -261,7 +261,7 @@ a:hover {
 }
 
 .page-buttons {
-    width: 200px;
+    width: 250px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -319,7 +319,7 @@ a:hover {
     }
 
     .page-buttons {
-        width: 55%;
+        width: 70%;
         text-align: left;
     }
     
