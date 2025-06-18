@@ -1,0 +1,344 @@
+:root {
+    --purple-1: #1c1021;
+    --purple-2: #221129;
+    --purple-3: #371146;
+    --purple-4: #480d5d;
+    --purple-5: #55126c;
+    --purple-6: #631d7c;
+    --purple-7: #782996;
+    --purple-8: #9c35c2;
+    --purple-9: #6e1d8b;
+    --purple-10: #581770;
+    --purple-11: #e78eff;
+    --purple-12: #f6d2ff;
+
+    --purple-a1: #00b80003;
+    --purple-a2: #f28ed006;
+    --purple-a3: #c722fd27;
+    --purple-a4: #c40bfe42;
+    --purple-a5: #c71bfd54;
+    --purple-a6: #cc34ff66;
+    --purple-a7: #cc42fe85;
+    --purple-a8: #cd44ffb8;
+    --purple-a9: #ca2efd78;
+    --purple-a10: #c829ff58;
+    --purple-a11: #e78eff;
+    --purple-a12: #f6d2ff;
+
+    --purple-contrast: #fff;
+    --purple-surface: #27142d80;
+    --purple-indicator: #6e1d8b;
+    --purple-track: #6e1d8b;
+}
+
+@supports (color: color(display-p3 1 1 1)) {
+    @media (color-gamut: p3) {
+        :root {
+            --purple-1: oklch(19.8% 0.0361 315.1);
+            --purple-2: oklch(21.5% 0.0512 315.1);
+            --purple-3: oklch(26.7% 0.1 315.1);
+            --purple-4: oklch(30.9% 0.1346 315.1);
+            --purple-5: oklch(34.5% 0.1486 315.1);
+            --purple-6: oklch(38.8% 0.1573 315.1);
+            --purple-7: oklch(45% 0.1756 315.1);
+            --purple-8: oklch(54.1% 0.216 315.1);
+            --purple-9: oklch(41.6% 0.1756 315.1);
+            --purple-10: oklch(35.7% 0.1486 315.1);
+            --purple-11: oklch(78.5% 0.216 315.1);
+            --purple-12: oklch(91.1% 0.079 315.1);
+
+            --purple-a1: color(display-p3 0 0.9333 0 / 0.009);
+            --purple-a2: color(display-p3 1 0.5961 0.8549 / 0.022);
+            --purple-a3: color(display-p3 0.7412 0.1725 1 / 0.142);
+            --purple-a4: color(display-p3 0.7373 0.1098 1 / 0.243);
+            --purple-a5: color(display-p3 0.749 0.1725 1 / 0.311);
+            --purple-a6: color(display-p3 0.7608 0.2549 1 / 0.384);
+            --purple-a7: color(display-p3 0.7647 0.302 1 / 0.498);
+            --purple-a8: color(display-p3 0.7725 0.3137 1 / 0.69);
+            --purple-a9: color(display-p3 0.7569 0.2353 1 / 0.448);
+            --purple-a10: color(display-p3 0.7529 0.2157 1 / 0.329);
+            --purple-a11: color(display-p3 0.8784 0.5882 1 / 0.973);
+            --purple-a12: color(display-p3 0.9529 0.8392 1 / 0.987);
+
+            --purple-contrast: #fff;
+            --purple-surface: color(display-p3 0.1412 0.0784 0.1725 / 0.5);
+            --purple-indicator: oklch(41.6% 0.1756 315.1);
+            --purple-track: oklch(41.6% 0.1756 315.1);
+        }
+    }
+}
+
+:root {
+    --gray-1: #151517;
+    --gray-2: #1c1c1e;
+    --gray-3: #242427;
+    --gray-4: #2a2b2f;
+    --gray-5: #303136;
+    --gray-6: #393a40;
+    --gray-7: #46484f;
+    --gray-8: #5f606a;
+    --gray-9: #6c6e79;
+    --gray-10: #797b86;
+    --gray-11: #b2b3bd;
+    --gray-12: #eeeef0;
+
+    --gray-a1: #00ee0008;
+    --gray-a2: #0dfc000f;
+    --gray-a3: #68f83a18;
+    --gray-a4: #88fd771f;
+    --gray-a5: #9df99826;
+    --gray-a6: #b5fdb82f;
+    --gray-a7: #c6fcd23e;
+    --gray-a8: #dffff057;
+    --gray-a9: #e3fef766;
+    --gray-a10: #e7fdfb74;
+    --gray-a11: #f2fbffb2;
+    --gray-a12: #fdfeffee;
+
+    --gray-contrast: #FFFFFF;
+    --gray-surface: rgba(0, 0, 0, 0.05);
+    --gray-indicator: #6c6e79;
+    --gray-track: #6c6e79;
+}
+
+@supports (color: color(display-p3 1 1 1)) {
+    @media (color-gamut: p3) {
+        :root {
+            --gray-1: oklch(19.8% 0.0042 277.7);
+            --gray-2: oklch(22.8% 0.004 277.7);
+            --gray-3: oklch(26.3% 0.0055 277.7);
+            --gray-4: oklch(28.8% 0.0075 277.7);
+            --gray-5: oklch(31.6% 0.0089 277.7);
+            --gray-6: oklch(35.1% 0.01 277.7);
+            --gray-7: oklch(40.2% 0.0121 277.7);
+            --gray-8: oklch(49.2% 0.0157 277.7);
+            --gray-9: oklch(54.1% 0.0167 277.7);
+            --gray-10: oklch(58.6% 0.0165 277.7);
+            --gray-11: oklch(77% 0.0138 277.7);
+            --gray-12: oklch(94.9% 0.0026 277.7);
+
+            --gray-a1: color(display-p3 0 1 0 / 0.025);
+            --gray-a2: color(display-p3 0.1765 0.9882 0 / 0.055);
+            --gray-a3: color(display-p3 0.5098 0.9961 0.2784 / 0.088);
+            --gray-a4: color(display-p3 0.6118 1 0.5137 / 0.117);
+            --gray-a5: color(display-p3 0.6863 1 0.6392 / 0.142);
+            --gray-a6: color(display-p3 0.7608 0.9961 0.7294 / 0.18);
+            --gray-a7: color(display-p3 0.8118 1 0.8353 / 0.238);
+            --gray-a8: color(display-p3 0.898 1 0.9451 / 0.338);
+            --gray-a9: color(display-p3 0.9098 1 0.9725 / 0.396);
+            --gray-a10: color(display-p3 0.9255 1 0.9882 / 0.45);
+            --gray-a11: color(display-p3 0.9608 0.9843 1 / 0.695);
+            --gray-a12: color(display-p3 0.9922 0.9961 1 / 0.932);
+
+            --gray-contrast: #FFFFFF;
+            --gray-surface: color(display-p3 0 0 0 / 5%);
+            --gray-indicator: oklch(54.1% 0.0167 277.7);
+            --gray-track: oklch(54.1% 0.0167 277.7);
+        }
+    }
+}
+
+:root {
+    --title-font-size: 48px;
+    --container-width: 1280px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    color: var(--gray-12);
+    font-family: "Press Start 2P", system-ui;
+}
+
+
+html {
+    min-height: 100vh;
+}
+
+body {
+    min-height: 100vh;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    padding: 6px;
+}
+
+.footer-container {
+    width: 100%;
+    position: sticky;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.copirate {
+    font-size: 14px;
+}
+
+.made-by {
+    font-size: 8px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--purple-11);
+}
+
+a:hover {
+    color: var(--purple-12);
+}
+
+.full-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.full-page-background {
+    z-index: -1;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    pointer-events: none;
+    filter: brightness(20%);
+}
+
+.page-container {
+    position: relative;
+    max-width: var(--container-width);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-central-container {
+    margin: 96px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.page-title {
+    width: 100%;
+    text-align: center;
+    font-size: var(--title-font-size);
+    font-weight: bold;
+    color: var(--purple-12);
+}
+
+.page-description {
+    padding: 14px;
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--purple-12);
+    background: var(--purple-surface);
+    border-radius: 12px;
+    border: 1px solid var(--purple-a6);
+}
+
+.page-space-between-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.page-buttons {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    background: var(--purple-surface);
+    border: 1px solid var(--purple-a6);
+}
+
+@media screen and (max-width: 1440px) {
+    .page-central-container {
+        padding: 0 30px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    :root {
+        --title-font-size: 36px;
+        --container-width: 768px;
+    }
+
+    .page-description {
+        font-size: 14px;
+        line-height: 24px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    :root {
+        --title-font-size: 20px;
+        --container-width: 375px;
+    }
+
+    .copirate {
+        font-size: 12px;
+    }
+
+    .made-by {
+        font-size: 6px;
+    }
+
+    .page-central-container {
+        margin: 48px 0;
+        padding: 0 12px;
+        gap: 24px;
+    }
+
+    .page-description {
+        font-size: 10px;
+        line-height: 18px;
+    }
+
+    .page-space-between-container {
+        flex-direction: column;
+    }
+
+    .page-buttons {
+        width: 55%;
+        text-align: center;
+    }
+    
+}
+
+gallery-grid
+{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-row-gap: 12px
+}
+
+h1 {
+    color: var(--gray-12);
+    width: 200%;
+    text-align: center;
+}
+h3 {
+    color: var(--gray-12);
+    width: 200%;
+    text-align: center;
+}
