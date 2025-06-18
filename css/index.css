@@ -168,17 +168,21 @@ header {
 }
 
 footer {
-    position: fixed;
+    position: relative; /* Позицию нельзя фиксировать Хруст зафексировал, а я голову ломай что я сломала*/
     bottom: 0;
     width: 100vw;
     padding: 6px;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 999;
 }
-
+.full-page {
+    min-height: calc(100vh - 60px); /* высота подвала */
+}
 .footer-container {
     width: 100%;
-    position: sticky;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
     gap: 12px;
