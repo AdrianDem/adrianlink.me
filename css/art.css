@@ -266,7 +266,7 @@ a:hover {
     flex-direction: column;
     gap: 20px;
     padding: 20px;
-    border-radius: 12px;
+    border-radius: 20px;
     background: var(--purple-surface);
     border: 1px solid var(--purple-a6);
 }
