@@ -342,3 +342,47 @@ h3 {
     width: 200%;
     text-align: center;
 }
+
+/* Контейнер сетки для размещения элементов */
+.gallery-grid {
+    display: grid;
+    /* Создает колонки, которые автоматически подстраиваются, минимум 300px шириной */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px; /* Отступы между элементами */
+    margin-top: 40px;
+    padding: 0 15px; /* Небольшой отступ по бокам */
+}
+
+/* Стили для одного элемента/обложки альбома */
+.gallery-item {
+    display: block;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none; /* Убирает подчеркивание у ссылок */
+    background-color: #222; /* Фон на случай, если изображение не загрузится */
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px); /* Небольшой подъем при наведении */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Стили для изображения внутри элемента */
+.gallery-item img {
+    width: 100%;
+    height: 200px; /* Фиксированная высота для единообразия */
+    object-fit: cover; /* Изображение будет обрезано, чтобы полностью заполнить контейнер */
+    display: block;
+}
+
+/* Стили для подписи/названия альбома */
+.gallery-caption {
+    padding: 10px;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive; /* Используем ваш шрифт */
+    font-size: 0.8em;
+    color: #fff;
+    background-color: #b23434; /* Используем ваш цветовой акцент */
+}
