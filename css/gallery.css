@@ -343,46 +343,59 @@ h3 {
     text-align: center;
 }
 
-/* Контейнер сетки для размещения элементов */
-.gallery-grid {
+/* --- Стилизация сетки обложек альбомов --- */
+
+.albums-grid {
     display: grid;
-    /* Создает колонки, которые автоматически подстраиваются, минимум 300px шириной */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px; /* Отступы между элементами */
+    /* Создает колонки, которые автоматически подстраиваются, минимум 250px шириной */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px; /* Отступы между элементами */
     margin-top: 40px;
-    padding: 0 15px; /* Небольшой отступ по бокам */
+    padding: 0 10px;
+    width: 100%;
+    max-width: 1000px; /* Ограничиваем максимальную ширину сетки */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Стили для одного элемента/обложки альбома */
-.gallery-item {
-    display: block;
+.album-item {
+    display: flex;
+    flex-direction: column;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-decoration: none; /* Убирает подчеркивание у ссылок */
-    background-color: #222; /* Фон на случай, если изображение не загрузится */
+    text-decoration: none;
+    background-color: #333; /* Темный фон */
 }
 
-.gallery-item:hover {
-    transform: translateY(-5px); /* Небольшой подъем при наведении */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+.album-item:hover {
+    transform: scale(1.05); /* Легкое увеличение при наведении */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.9);
 }
 
-/* Стили для изображения внутри элемента */
-.gallery-item img {
+/* Стили для изображения обложки */
+.album-item img {
     width: 100%;
-    height: 200px; /* Фиксированная высота для единообразия */
-    object-fit: cover; /* Изображение будет обрезано, чтобы полностью заполнить контейнер */
+    /* Делаем изображения квадратными для эффекта обложки */
+    aspect-ratio: 1 / 1; 
+    object-fit: cover;
     display: block;
 }
 
 /* Стили для подписи/названия альбома */
-.gallery-caption {
-    padding: 10px;
+.album-caption {
+    padding: 15px 10px;
     text-align: center;
-    font-family: 'Press Start 2P', cursive; /* Используем ваш шрифт */
-    font-size: 0.8em;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7em;
     color: #fff;
-    background-color: #b23434; /* Используем ваш цветовой акцент */
+    background-color: #b23434; /* Ваш акцентный цвет */
+    flex-grow: 1; 
+}
+
+/* Стилизация заголовка, чтобы он лучше смотрелся с сеткой */
+.page-content-header[data-text="Галерея"] {
+    margin-bottom: 40px;
 }
