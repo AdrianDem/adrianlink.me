@@ -173,6 +173,7 @@ footer {
     width: 100vw;
     padding: 6px;
     text-align: center;
+    flex-direction: row;
     padding: 10px 0;
     z-index: 999;
 }
@@ -265,11 +266,12 @@ a:hover {
 }
 
 .page-buttons {
-    width: 250px;
+    width: 270px;
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding: 20px;
+    color: var(--purple-12);
     border-radius: 12px;
     background: var(--purple-surface);
     border: 1px solid var(--purple-a6);
