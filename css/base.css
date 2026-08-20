@@ -201,7 +201,7 @@ footer {
     color: var(--purple-12);
 }
 
-a,
+a:link,
 a:visited {
     text-decoration: none;
     color: var(--purple-11);
@@ -209,6 +209,10 @@ a:visited {
 
 a:hover,
 a:focus-visible {
+    color: var(--purple-12);
+}
+
+a:active {
     color: var(--purple-12);
 }
 
