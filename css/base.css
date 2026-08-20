@@ -191,6 +191,16 @@ footer {
     font-size: 8px;
 }
 
+.page-buttons a,
+.page-buttons a:visited {
+    color: var(--purple-11);
+}
+
+.page-buttons a:hover,
+.page-buttons a:focus-visible {
+    color: var(--purple-12);
+}
+
 a,
 a:visited {
     text-decoration: none;
