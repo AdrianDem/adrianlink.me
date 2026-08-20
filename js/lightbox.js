@@ -1,21 +1,22 @@
 (function () {
-    const images = document.querySelectorAll('.gallery-grid img');
+    var images = document.querySelectorAll('.gallery-grid img');
     if (!images.length) return;
 
-    const overlay = document.createElement('div');
+    var overlay = document.createElement('div');
     overlay.className = 'lightbox';
-    overlay.innerHTML = `
-        <span class="lightbox-close">&times;</span>
-        <span class="lightbox-nav lightbox-prev">&#8249;</span>
-        <span class="lightbox-nav lightbox-next">&#8250;</span>
-        <img class="lightbox-img" src="" alt="">
-        <div class="lightbox-counter"></div>
-    `;
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-label', 'Image lightbox');
+    overlay.innerHTML =
+        '<button class="lightbox-close" aria-label="Close">&times;</button>' +
+        '<button class="lightbox-nav lightbox-prev" aria-label="Previous image">&#8249;</button>' +
+        '<button class="lightbox-nav lightbox-next" aria-label="Next image">&#8250;</button>' +
+        '<img class="lightbox-img" src="" alt="">' +
+        '<div class="lightbox-counter"></div>';
     document.body.appendChild(overlay);
 
-    const img = overlay.querySelector('.lightbox-img');
-    const counter = overlay.querySelector('.lightbox-counter');
-    let current = 0;
+    var img = overlay.querySelector('.lightbox-img');
+    var counter = overlay.querySelector('.lightbox-counter');
+    var current = 0;
 
     function show(i) {
         current = i;

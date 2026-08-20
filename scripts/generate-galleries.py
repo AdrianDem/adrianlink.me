@@ -159,8 +159,6 @@ def generate_html(page):
 </head>
 <body>
 <button class="lang-toggle" id="lang-toggle">EN</button>
-<header></header>
-
 <img class="full-page-background" src="{page["bg"]}" alt="">
 <div class="full-page">
     <div class="page-container">
@@ -185,8 +183,8 @@ def generate_html(page):
 
 <footer>
     <div class="footer-container">
-        <div class="copirate">2026 © adrian-demoner.ru</div>
-        <div class="made-by"><span data-en="Made by">Made by</span> <a href="https://xrustaller.ru">Xrustaller</a></div>
+        <div class="copyright">2026 © adrian-demoner.ru</div>
+        <div class="made-by"><span data-en="Made by">Сделано</span> <a href="https://xrustaller.ru">Xrustaller</a></div>
     </div>
 </footer>
 </body>
@@ -203,6 +201,6 @@ for page in pages:
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(html)
     img_count = html.count("<img ")
-    print(f'  /{slug} -> {img_count} изображений')
+    print(f'  /{slug} -> {img_count} images')
 
-print("\nВсе страницы сгенерированы!")
+print("\nAll pages generated!")

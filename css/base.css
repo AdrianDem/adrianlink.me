@@ -29,6 +29,9 @@
     --purple-surface: #27142d80;
     --purple-indicator: #6e1d8b;
     --purple-track: #6e1d8b;
+
+    --title-font-size: 48px;
+    --container-width: 1280px;
 }
 
 @supports (color: color(display-p3 1 1 1)) {
@@ -138,11 +141,6 @@
     }
 }
 
-:root {
-    --title-font-size: 48px;
-    --container-width: 1280px;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -159,22 +157,21 @@ html {
 
 body {
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     overflow-x: hidden;
+    background-color: var(--purple-1);
 }
 
 header {
-    position: absolute;
-    top: 0;
-    width: 100%;
+    display: none;
 }
 
 footer {
-    position: relative;
-    bottom: 0;
     width: 100%;
     padding: 10px 0;
     text-align: center;
-    z-index: 999;
+    margin-top: auto;
 }
 
 .footer-container {
@@ -186,7 +183,7 @@ footer {
     gap: 12px;
 }
 
-.copirate {
+.copyright {
     font-size: 14px;
 }
 
@@ -194,13 +191,21 @@ footer {
     font-size: 8px;
 }
 
-a {
+a,
+a:visited {
     text-decoration: none;
     color: var(--purple-11);
 }
 
-a:hover {
+a:hover,
+a:focus-visible {
     color: var(--purple-12);
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--purple-12);
+    outline-offset: 3px;
 }
 
 .full-page {
@@ -208,13 +213,18 @@ a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex: 1;
 }
 
 .full-page-background {
     z-index: -1;
     position: fixed;
-    width: 100vw;
-    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     pointer-events: none;
     filter: brightness(70%);
@@ -340,86 +350,36 @@ a:hover {
     flex-grow: 1;
 }
 
-@media screen and (max-width: 1440px) {
-    .page-central-container {
-        padding: 0 30px;
-    }
+.lang-toggle {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 10001;
+    background: rgba(39, 20, 45, 0.85);
+    border: 1px solid var(--purple-8);
+    color: var(--purple-11);
+    font-family: "Press Start 2P", system-ui;
+    font-size: 12px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-@media screen and (min-width: 1920px) {
-    :root {
-        --title-font-size: 56px;
-        --container-width: 1440px;
-    }
+.lang-toggle:hover {
+    background: var(--purple-a8);
+    color: #fff;
 }
 
-@media screen and (max-width: 1024px) {
-    :root {
-        --title-font-size: 36px;
-        --container-width: 768px;
-    }
-
-    .page-description {
-        font-size: 14px;
-        line-height: 24px;
-    }
-
-    .page-buttons {
-        width: 240px;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    :root {
-        --title-font-size: 20px;
-        --container-width: 375px;
-    }
-
-    .copirate {
-        font-size: 12px;
-    }
-
-    .made-by {
-        font-size: 6px;
-    }
-
-    .page-central-container {
-        margin: 48px 0;
-        padding: 0 12px;
-        gap: 24px;
-    }
-
-    .page-description {
-        font-size: 10px;
-        line-height: 18px;
-    }
-
-    .page-space-between-container {
-        flex-direction: column;
-    }
-
-    .page-buttons {
-        width: 100%;
-        text-align: left;
-    }
-
-    .lang-toggle {
-        top: 10px;
-        right: 10px;
-        font-size: 10px;
-        padding: 6px 10px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    :root {
-        --title-font-size: 16px;
-    }
-
-    .page-buttons {
-        padding: 14px;
-        gap: 14px;
-    }
+.lang-toggle:active {
+    transform: scale(0.95);
 }
 
 .lightbox {
@@ -461,6 +421,9 @@ a:hover {
     transition: color 0.2s;
     z-index: 10000;
     font-family: sans-serif;
+    background: none;
+    border: none;
+    padding: 8px;
 }
 
 .lightbox-close:hover {
@@ -479,6 +442,8 @@ a:hover {
     z-index: 10000;
     font-family: sans-serif;
     user-select: none;
+    background: none;
+    border: none;
 }
 
 .lightbox-nav:hover {
@@ -500,30 +465,76 @@ a:hover {
     font-family: "Press Start 2P", system-ui;
 }
 
-.lang-toggle {
-    position: fixed;
-    top: 16px;
-    right: 16px;
-    z-index: 10001;
-    background: rgba(39, 20, 45, 0.85);
-    border: 1px solid var(--purple-8);
-    color: var(--purple-11);
-    font-family: "Press Start 2P", system-ui;
-    font-size: 12px;
-    padding: 8px 14px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+@media screen and (min-width: 1920px) {
+    :root {
+        --title-font-size: 56px;
+        --container-width: 1440px;
+    }
 }
 
-.lang-toggle:hover {
-    background: var(--purple-a8);
-    color: #fff;
+@media screen and (max-width: 1440px) {
+    .page-central-container {
+        padding: 0 30px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    :root {
+        --title-font-size: 36px;
+        --container-width: 768px;
+    }
+
+    .page-description {
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .page-buttons {
+        width: 240px;
+    }
 }
 
 @media screen and (max-width: 768px) {
+    :root {
+        --title-font-size: 20px;
+        --container-width: 375px;
+    }
+
+    .copyright {
+        font-size: 12px;
+    }
+
+    .made-by {
+        font-size: 6px;
+    }
+
+    .page-central-container {
+        margin: 48px 0;
+        padding: 0 12px;
+        gap: 24px;
+    }
+
+    .page-description {
+        font-size: 10px;
+        line-height: 18px;
+    }
+
+    .page-space-between-container {
+        flex-direction: column;
+    }
+
+    .page-buttons {
+        width: 100%;
+        text-align: left;
+    }
+
+    .lang-toggle {
+        top: 10px;
+        right: 10px;
+        font-size: 10px;
+        padding: 6px 10px;
+    }
+
     .lightbox-nav {
         font-size: 32px;
         padding: 10px;
@@ -533,5 +544,16 @@ a:hover {
         font-size: 28px;
         top: 12px;
         right: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    :root {
+        --title-font-size: 16px;
+    }
+
+    .page-buttons {
+        padding: 14px;
+        gap: 14px;
     }
 }
