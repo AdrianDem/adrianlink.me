@@ -101,4 +101,5 @@ else:
 
     if total > 0:
         print("\nГенерация HTML...")
-        exec(open(os.path.join(SCRIPT_DIR, "generate-galleries.py"), encoding="utf-8").read())
+        gen_path = os.path.join(SCRIPT_DIR, "generate-galleries.py")
+        exec(open(gen_path, encoding="utf-8").read())

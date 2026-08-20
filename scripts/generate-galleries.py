@@ -8,49 +8,49 @@ GALLERY_DIR = os.path.join(ROOT_DIR, "img gallery")
 pages = [
     {
         "folder": "VRC/chil",
-        "file": "vrc.html",
+        "slug": "vrc",
         "title": "VRChat Чилл",
-        "bg": "./img/bgfon1.webp",
-        "css": "./css/gallery.css",
-        "cover": "./img/gallery_covers/chilvrc_cover.webp",
-        "ogUrl": "https://adrian-demoner.ru/vrc.html",
-        "canonical": "https://adrian-demoner.ru/vrc.html",
+        "bg": "../img/bgfon1.webp",
+        "css": "../css/gallery.css",
+        "cover": "https://adrian-demoner.ru/img/gallery_covers/chilvrc_cover.webp",
+        "ogUrl": "https://adrian-demoner.ru/vrc",
+        "canonical": "https://adrian-demoner.ru/vrc",
         "altPrefix": "VRChat фото",
         "extraFolders": [],
     },
     {
         "folder": "VRC/Metranome fest 2026",
-        "file": "metrafest2025.html",
+        "slug": "metrafest2025",
         "title": "Metranom Fest 2025",
-        "bg": "./img/bg1.webp",
-        "css": "./css/gallery.css",
-        "cover": "./img/gallery_covers/metrafest_cover.webp",
-        "ogUrl": "https://adrian-demoner.ru/metrafest2025.html",
-        "canonical": "https://adrian-demoner.ru/metrafest2025.html",
+        "bg": "../img/bg1.webp",
+        "css": "../css/gallery.css",
+        "cover": "https://adrian-demoner.ru/img/gallery_covers/metrafest_cover.webp",
+        "ogUrl": "https://adrian-demoner.ru/metrafest2025",
+        "canonical": "https://adrian-demoner.ru/metrafest2025",
         "altPrefix": "Metranom Fest фото",
         "extraFolders": [],
     },
     {
         "folder": "VRC/Metranome Ivent vcr",
-        "file": "metranomivent.html",
+        "slug": "metranomivent",
         "title": "Ивенты Metranom Bar",
-        "bg": "./img/bg1.webp",
-        "css": "./css/gallery.css",
-        "cover": "./img/gallery_covers/metranomivent_cover.webp",
-        "ogUrl": "https://adrian-demoner.ru/metranomivent.html",
-        "canonical": "https://adrian-demoner.ru/metranomivent.html",
+        "bg": "../img/bg1.webp",
+        "css": "../css/gallery.css",
+        "cover": "https://adrian-demoner.ru/img/gallery_covers/metranomivent_cover.webp",
+        "ogUrl": "https://adrian-demoner.ru/metranomivent",
+        "canonical": "https://adrian-demoner.ru/metranomivent",
         "altPrefix": "Metranom ивент фото",
         "extraFolders": [],
     },
     {
         "folder": "Art",
-        "file": "atr.html",
+        "slug": "atr",
         "title": "Арты",
-        "bg": "./img/bg1.webp",
-        "css": "./css/art.css",
-        "cover": "./img/gallery_covers/arts_cover.webp",
-        "ogUrl": "https://adrian-demoner.ru/atr.html",
-        "canonical": "https://adrian-demoner.ru/atr.html",
+        "bg": "../img/bg1.webp",
+        "css": "../css/art.css",
+        "cover": "https://adrian-demoner.ru/img/gallery_covers/arts_cover.webp",
+        "ogUrl": "https://adrian-demoner.ru/atr",
+        "canonical": "https://adrian-demoner.ru/atr",
         "altPrefix": "Арт",
         "extraFolders": ["3d art-modeling"],
     },
@@ -72,14 +72,14 @@ def generate_gallery_images(page):
 
     main_folder = os.path.join(GALLERY_DIR, page["folder"])
     for file in get_images(main_folder):
-        src = f'./img gallery/{page["folder"]}/{file}'
+        src = f'../img gallery/{page["folder"]}/{file}'
         lines.append(f'                <img src="{src}" alt="{page["altPrefix"]} {counter}" loading="lazy">')
         counter += 1
 
     for ef in page.get("extraFolders", []):
         extra_folder = os.path.join(GALLERY_DIR, ef)
         for file in get_images(extra_folder):
-            src = f'./img gallery/{ef}/{file}'
+            src = f'../img gallery/{ef}/{file}'
             lines.append(f'                <img src="{src}" alt="{page["altPrefix"]}" loading="lazy">')
             counter += 1
 
@@ -94,7 +94,7 @@ def generate_html(page):
     <meta charset="UTF-8">
     <title>{page["title"]} - Adrian Demoner</title>
 
-    <link rel="icon" href="./img/favicon.png">
+    <link rel="icon" href="../img/favicon.png">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <script type="application/ld+json">
@@ -141,7 +141,7 @@ def generate_html(page):
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="{page["css"]}">
-    <script defer src="./js/lightbox.js"></script>
+    <script defer src="../js/lightbox.js"></script>
 </head>
 <body>
 <header></header>
@@ -158,10 +158,10 @@ def generate_html(page):
 
             <div class="page-space-between-container" style="margin-top: 40px;">
                 <div class="page-buttons">
-                    <a href="./gallery.html">Галерея</a>
+                    <a href="/gallery">Галерея</a>
                 </div>
                 <div class="page-buttons">
-                    <a href="./index.html">Главная</a>
+                    <a href="/">Главная</a>
                 </div>
             </div>
         </div>
@@ -179,11 +179,15 @@ def generate_html(page):
 
 
 for page in pages:
+    slug = page["slug"]
+    folder_dir = os.path.join(ROOT_DIR, slug)
+    os.makedirs(folder_dir, exist_ok=True)
+
     html = generate_html(page)
-    out_path = os.path.join(ROOT_DIR, page["file"])
+    out_path = os.path.join(folder_dir, "index.html")
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(html)
     img_count = html.count("<img ")
-    print(f'  {page["file"]} — {img_count} изображений')
+    print(f'  /{slug} -> {img_count} изображений')
 
 print("\nВсе страницы сгенерированы!")
