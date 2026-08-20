@@ -10,48 +10,56 @@ pages = [
         "folder": "VRC/chil",
         "slug": "vrc",
         "title": "VRChat Чилл",
+        "titleEn": "VRChat Chill",
         "bg": "../img/bgfon1.webp",
         "css": "../css/gallery.css",
         "cover": "https://adrian-demoner.ru/img/gallery_covers/chilvrc_cover.webp",
         "ogUrl": "https://adrian-demoner.ru/vrc",
         "canonical": "https://adrian-demoner.ru/vrc",
         "altPrefix": "VRChat фото",
+        "altPrefixEn": "VRChat photo",
         "extraFolders": [],
     },
     {
         "folder": "VRC/Metranome fest 2026",
         "slug": "metrafest2025",
         "title": "Metranom Fest 2025",
+        "titleEn": "Metranom Fest 2025",
         "bg": "../img/bg1.webp",
         "css": "../css/gallery.css",
         "cover": "https://adrian-demoner.ru/img/gallery_covers/metrafest_cover.webp",
         "ogUrl": "https://adrian-demoner.ru/metrafest2025",
         "canonical": "https://adrian-demoner.ru/metrafest2025",
         "altPrefix": "Metranom Fest фото",
+        "altPrefixEn": "Metranom Fest photo",
         "extraFolders": [],
     },
     {
         "folder": "VRC/Metranome Ivent vcr",
         "slug": "metranomivent",
         "title": "Ивенты Metranom Bar",
+        "titleEn": "Metranom Bar Events",
         "bg": "../img/bg1.webp",
         "css": "../css/gallery.css",
         "cover": "https://adrian-demoner.ru/img/gallery_covers/metranomivent_cover.webp",
         "ogUrl": "https://adrian-demoner.ru/metranomivent",
         "canonical": "https://adrian-demoner.ru/metranomivent",
         "altPrefix": "Metranom ивент фото",
+        "altPrefixEn": "Metranom event photo",
         "extraFolders": [],
     },
     {
         "folder": "Art",
         "slug": "atr",
         "title": "Арты",
+        "titleEn": "Arts",
         "bg": "../img/bg1.webp",
         "css": "../css/art.css",
         "cover": "https://adrian-demoner.ru/img/gallery_covers/arts_cover.webp",
         "ogUrl": "https://adrian-demoner.ru/atr",
         "canonical": "https://adrian-demoner.ru/atr",
         "altPrefix": "Арт",
+        "altPrefixEn": "Art",
         "extraFolders": ["3d art-modeling"],
     },
 ]
@@ -73,14 +81,18 @@ def generate_gallery_images(page):
     main_folder = os.path.join(GALLERY_DIR, page["folder"])
     for file in get_images(main_folder):
         src = f'../img gallery/{page["folder"]}/{file}'
-        lines.append(f'                <img src="{src}" alt="{page["altPrefix"]} {counter}" loading="lazy">')
+        alt_ru = f'{page["altPrefix"]} {counter}'
+        alt_en = f'{page.get("altPrefixEn", page["altPrefix"])} {counter}'
+        lines.append(f'                <img src="{src}" alt="{alt_ru}" data-en-alt="{alt_en}" loading="lazy">')
         counter += 1
 
     for ef in page.get("extraFolders", []):
         extra_folder = os.path.join(GALLERY_DIR, ef)
         for file in get_images(extra_folder):
             src = f'../img gallery/{ef}/{file}'
-            lines.append(f'                <img src="{src}" alt="{page["altPrefix"]}" loading="lazy">')
+            alt_ru = f'{page["altPrefix"]}'
+            alt_en = f'{page.get("altPrefixEn", page["altPrefix"])}'
+            lines.append(f'                <img src="{src}" alt="{alt_ru}" data-en-alt="{alt_en}" loading="lazy">')
             counter += 1
 
     return "\n".join(lines)
@@ -135,6 +147,7 @@ def generate_html(page):
 
     <link rel="canonical" href="{page["canonical"]}">
     <link rel="alternate" hreflang="ru" href="{page["canonical"]}">
+    <link rel="alternate" hreflang="en" href="{page["canonical"]}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -142,15 +155,17 @@ def generate_html(page):
 
     <link rel="stylesheet" type="text/css" href="{page["css"]}">
     <script defer src="../js/lightbox.js"></script>
+    <script defer src="../js/lang.js"></script>
 </head>
 <body>
+<button class="lang-toggle" id="lang-toggle">EN</button>
 <header></header>
 
 <img class="full-page-background" src="{page["bg"]}" alt="">
 <div class="full-page">
     <div class="page-container">
         <div class="page-central-container">
-            <div class="page-title">{page["title"]}</div>
+            <div class="page-title" data-en="{page["titleEn"]}">{page["title"]}</div>
 
             <div class="gallery-grid">
 {images_html}
@@ -158,10 +173,10 @@ def generate_html(page):
 
             <div class="page-space-between-container" style="margin-top: 40px;">
                 <div class="page-buttons">
-                    <a href="/gallery">Галерея</a>
+                    <a href="/gallery"><span data-en="Gallery">Галерея</span></a>
                 </div>
                 <div class="page-buttons">
-                    <a href="/">Главная</a>
+                    <a href="/"><span data-en="Home">Главная</span></a>
                 </div>
             </div>
         </div>
@@ -171,7 +186,7 @@ def generate_html(page):
 <footer>
     <div class="footer-container">
         <div class="copirate">2026 © adrian-demoner.ru</div>
-        <div class="made-by">Made by <a href="https://xrustaller.ru">Xrustaller</a></div>
+        <div class="made-by"><span data-en="Made by">Made by</span> <a href="https://xrustaller.ru">Xrustaller</a></div>
     </div>
 </footer>
 </body>
